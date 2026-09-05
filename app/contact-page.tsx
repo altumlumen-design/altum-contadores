@@ -1,0 +1,26 @@
+'use client';
+
+/* oxlint-disable jsx-a11y/prefer-tag-over-role -- Live status is intentionally announced after share actions. */
+
+import { useMemo, useState } from 'react';
+import { ArrowRight, Check, CheckCircle2, Copy, FileText, RotateCcw, Share2, ShieldCheck } from 'lucide-react';
+import SiteChrome from './site-chrome';
+import { services } from './site-content';
+
+export default function ContactPage() {
+  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState('');
+  const [data, setData] = useState({ name: '', company: '', email: '', phone: '', service: services[0].title, stage: 'Necesito ordenar la operación actual', message: '' });
+  const summary = useMemo(() => ['CONSULTA INICIAL — ALTUM CONTADORES Y ASOCIADOS', `Nombre: ${data.name}`, `Empresa: ${data.company}`, `Correo: ${data.email}`, `Teléfono: ${data.phone || 'No indicado'}`, `Servicio: ${data.service}`, `Situación: ${data.stage}`, `Contexto: ${data.message || 'Sin comentario adicional'}`].join('\n'), [data]);
+  const update = (field: keyof typeof data, value: string) => setData((current) => ({ ...current, [field]: value }));
+  function submit(event: { preventDefault(): void }) { event.preventDefault(); setSubmitted(true); setStatus(''); }
+  async function copy() { try { await navigator.clipboard.writeText(summary); setStatus('Resumen copiado al portapapeles.'); } catch { setStatus('No se pudo copiar automáticamente. Selecciona el texto y cópialo manualmente.'); } }
+  async function share() { try { if (navigator.share) { await navigator.share({ title: 'Consulta inicial — Altum', text: summary }); setStatus('Consulta compartida.'); } else await copy(); } catch (error) { if (!(error instanceof DOMException && error.name === 'AbortError')) setStatus('No se pudo abrir el menú de compartir.'); } }
+  return <SiteChrome>
+    <section className="contact-hero-page"><div className="inner-shell"><div className="page-kicker light"><span>06</span>Contacto</div><h1>Empecemos por entender <span>qué está pasando.</span></h1><p>Prepara el contexto de tu consulta. Al finalizar podrás copiarlo o compartirlo por el canal que prefieras.</p></div></section>
+    <section className="contact-workspace inner-shell">
+      <div className="contact-context"><span>Antes de conversar</span><h2>Una buena consulta empieza con contexto.</h2><p>No necesitas tener todo resuelto. Indica el frente principal, la situación y el resultado que esperas.</p><div className="contact-assurance"><ShieldCheck aria-hidden="true" /><p>Este formulario no envía ni almacena información. Solo organiza un resumen local para que tú decidas cómo compartirlo.</p></div><div className="prep-list"><h3><FileText aria-hidden="true" /> Si los tienes a mano</h3><ul><li><Check aria-hidden="true" />Último cierre o reporte disponible</li><li><Check aria-hidden="true" />Comunicación o requerimiento recibido</li><li><Check aria-hidden="true" />Fecha límite relevante</li><li><Check aria-hidden="true" />Resultado que necesitas obtener</li></ul></div></div>
+      <div className="contact-panel">{!submitted ? <form onSubmit={submit} className="consult-form page-form"><div className="form-row"><label>Nombre<input required value={data.name} onChange={(e) => update('name', e.target.value)} placeholder="Tu nombre" /></label><label>Empresa<input required value={data.company} onChange={(e) => update('company', e.target.value)} placeholder="Nombre de la empresa" /></label></div><div className="form-row"><label>Correo<input required type="email" value={data.email} onChange={(e) => update('email', e.target.value)} placeholder="nombre@empresa.com" /></label><label>Teléfono <span>(opcional)</span><input value={data.phone} onChange={(e) => update('phone', e.target.value)} placeholder="Número de contacto" /></label></div><label>Servicio de interés<select value={data.service} onChange={(e) => update('service', e.target.value)}>{services.map((service) => <option key={service.slug}>{service.title}</option>)}</select></label><label>Situación actual<select value={data.stage} onChange={(e) => update('stage', e.target.value)}><option>Necesito ordenar la operación actual</option><option>Quiero prevenir un riesgo</option><option>Tengo una urgencia o requerimiento</option><option>Estoy evaluando una decisión de crecimiento</option><option>Busco una segunda opinión</option></select></label><label>Cuéntanos el contexto <span>(opcional)</span><textarea rows={5} value={data.message} onChange={(e) => update('message', e.target.value)} placeholder="¿Qué ocurre, desde cuándo y qué resultado esperas?" /></label><button className="form-submit" type="submit">Preparar resumen <ArrowRight aria-hidden="true" /></button></form> : <div className="contact-summary"><CheckCircle2 aria-hidden="true" /><span>Resumen preparado</span><h2>Tu consulta está lista.</h2><p>Revísala y compártela por el canal que prefieras.</p><pre>{summary}</pre><div><button onClick={share} type="button"><Share2 aria-hidden="true" />Compartir</button><button onClick={copy} type="button"><Copy aria-hidden="true" />Copiar</button></div><p className="share-status" role="status">{status}</p><button className="summary-reset" onClick={() => { setSubmitted(false); setStatus(''); }} type="button"><RotateCcw aria-hidden="true" />Editar información</button></div>}</div>
+    </section>
+  </SiteChrome>;
+}
