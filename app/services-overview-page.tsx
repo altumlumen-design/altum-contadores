@@ -4,6 +4,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   BriefcaseBusiness,
+  Building2,
   Calculator,
   FileSearch,
   Landmark,
@@ -22,6 +23,7 @@ const iconMap = {
   users: Users,
   chart: LineChart,
   audit: FileSearch,
+  building: Building2,
   briefcase: BriefcaseBusiness,
 } satisfies Record<ServiceIconKey, typeof Calculator>;
 
@@ -32,7 +34,7 @@ export default function ServicesOverviewPage() {
         <div className="inner-hero-grid" aria-hidden="true" />
         <div className="inner-hero-copy inner-shell">
           <div className="page-kicker"><span>01</span>Servicios</div>
-          <h1>Una firma.<br /><span>Seis perspectivas.</span></h1>
+          <h1>Una firma.<br /><span>Siete perspectivas.</span></h1>
           <p>Integramos contabilidad, tributación, personas y finanzas para que cada frente de la empresa avance con la misma información.</p>
           <a className="inner-primary-link" href={sitePath('contacto/')}>Encontrar el servicio adecuado <ArrowUpRight aria-hidden="true" /></a>
         </div>

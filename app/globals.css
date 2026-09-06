@@ -451,6 +451,10 @@ img { display: block; max-width: 100%; }
 .profile-portrait::before { content: ''; position: absolute; width: 210px; height: 210px; border: 1px solid rgb(255 255 255 / 21%); border-radius: 50%; }
 .profile-portrait svg { width: 115px; height: 115px; color: rgb(255 255 255 / 68%); stroke-width: 0.8; }
 .profile-portrait span { position: absolute; right: 18px; bottom: 14px; color: #9ccaff; font-family: var(--font-geist-mono), monospace; font-size: 0.72rem; letter-spacing: 0.12em; }
+.profile-portrait.has-photo { height: 330px; background: #dfe8f4; }
+.profile-portrait.has-photo::before { display: none; }
+.profile-portrait.has-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 26%; }
+.profile-portrait.has-photo span { padding: 6px 8px; color: white; background: rgb(4 18 42 / 78%); backdrop-filter: blur(6px); }
 .profile-status { display: inline-block; margin-top: 27px; padding: 6px 9px; color: var(--cobalt); background: #dbeaff; font-family: var(--font-geist-mono), monospace; font-size: 0.66rem; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; }
 .profile-card h3 { margin: 21px 0 7px; font-size: clamp(1.75rem, 2.6vw, 2.7rem); line-height: 1; letter-spacing: -0.045em; }
 .profile-role { margin: 0; color: var(--cobalt); font-size: 0.83rem; font-weight: 680; text-transform: uppercase; letter-spacing: 0.06em; }
@@ -621,6 +625,21 @@ img { display: block; max-width: 100%; }
 .brand-mobile, .menu-trigger { display: none; }
 .header-actions { justify-self: end; display: flex; align-items: center; gap: 8px; }
 .header-cta { font-family: inherit; cursor: pointer; background: transparent; }
+.header-portal {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 15px;
+  color: white;
+  background: var(--cobalt);
+  border: 1px solid var(--cobalt);
+  font-size: 0.8rem;
+  font-weight: 680;
+  white-space: nowrap;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+.header-portal:hover { background: var(--ink); border-color: var(--ink); transform: translateY(-1px); }
+.header-portal svg { width: 16px; height: 16px; }
 
 .hero-art { padding: clamp(44px, 5vw, 76px); }
 .hero-art::before {
@@ -927,6 +946,7 @@ footer { color: white; background: #040c19; }
 .mobile-sheet-mark { position: absolute; right: -35%; bottom: -6%; width: 110%; opacity: 0.05; filter: invert(1); }
 
 @media (max-width: 1180px) {
+  .header-portal { width: 44px; justify-content: center; padding-inline: 0; font-size: 0; }
   .hero-art-frame { width: min(32vw, 420px); }
   .team-layout { grid-template-columns: 0.75fr 1.25fr; gap: 65px; }
   .footer-main { grid-template-columns: 1.1fr 0.6fr 1fr; }
@@ -935,8 +955,9 @@ footer { color: white; background: #040c19; }
 
 @media (max-width: 960px) {
   .brand-desktop { display: none; }
-  .brand-mobile { display: flex; align-items: center; gap: 11px; color: var(--cobalt); font-weight: 820; font-size: 1.55rem; letter-spacing: -0.055em; }
-  .brand-mobile img { width: 39px; height: 34px; object-fit: contain; }
+  .brand-mobile { width: clamp(190px, 32vw, 250px); display: flex; align-items: center; }
+  .brand-mobile img { width: 100%; height: auto; max-height: 56px; object-fit: contain; object-position: left center; }
+  .header-portal,
   .header-cta { display: none; }
   .menu-trigger { width: 43px; height: 43px; display: grid; place-items: center; border: 1px solid #bdcadd; background: white; color: var(--ink); cursor: pointer; }
   .menu-trigger svg { width: 21px; }
@@ -961,7 +982,7 @@ footer { color: white; background: #040c19; }
 
 @media (max-width: 760px) {
   .site-header { grid-template-columns: 1fr auto; }
-  .brand-mobile { font-size: 1.4rem; }
+  .brand-mobile { width: clamp(172px, 52vw, 230px); }
   #inicio { scroll-margin-top: 74px; }
   .hero { display: block; }
   .hero-copy { position: relative; z-index: 4; min-height: calc(100svh - 74px); display: flex; flex-direction: column; justify-content: center; padding: 72px 22px 64px; background: linear-gradient(to bottom, rgb(4 20 47 / 15%), rgb(4 20 47 / 86%)); }

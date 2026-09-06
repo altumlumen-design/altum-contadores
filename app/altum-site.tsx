@@ -50,6 +50,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { assetPath, sitePath } from './site-paths';
+import { corporatePortalUrl } from './site-content';
 
 const services = [
   {
@@ -129,6 +130,21 @@ const services = [
   },
   {
     number: '06',
+    short: 'Sector público',
+    title: 'Contabilidad gubernamental',
+    summary:
+      'Asistencia técnica para ordenar procesos contables, cierres y rendición de información en el sector público.',
+    icon: Building2,
+    deliverables: [
+      'Diagnóstico de procesos y saldos contables',
+      'Cierres y conciliaciones',
+      'Información financiera y presupuestaria',
+      'Planes de regularización y asistencia técnica',
+    ],
+    result: 'Información pública consistente, documentada y preparada para sus hitos de rendición.',
+  },
+  {
+    number: '07',
     short: 'Empresa',
     title: 'Asesoría empresarial',
     summary:
@@ -209,6 +225,7 @@ const serviceSlugs = [
   'gestion-laboral-planillas',
   'finanzas-control-gestion',
   'auditoria-cumplimiento',
+  'contabilidad-gubernamental',
   'asesoria-empresarial',
 ] as const;
 
@@ -366,8 +383,7 @@ export default function AltumSite() {
             <img src={assetPath('altum-logo.png')} alt="Altum Contadores y Asociados" width={1200} height={360} />
           </a>
           <a className="brand-mobile" href={sitePath()} aria-label="Altum Contadores y Asociados — inicio">
-            <img src={assetPath('altum-symbol.png')} alt="" width={1024} height={808} />
-            <span>ALTUM</span>
+            <img src={assetPath('altum-logo.png')} alt="Altum Contadores y Asociados" width={1200} height={360} />
           </a>
 
           <nav className="desktop-nav" aria-label="Navegación principal">
@@ -377,6 +393,9 @@ export default function AltumSite() {
           </nav>
 
           <div className="header-actions">
+            <a className="header-portal" href={corporatePortalUrl} target="_blank" rel="noreferrer">
+              Portal corporativo <ArrowUpRight aria-hidden="true" />
+            </a>
             <a className="header-cta" href={sitePath('contacto/')}>
               Hablemos <ArrowUpRight aria-hidden="true" />
             </a>
@@ -397,6 +416,9 @@ export default function AltumSite() {
                   ))}
                   <a href={sitePath('contacto/')} onClick={() => setMobileOpen(false)}>
                     <span>07</span>Contacto<ArrowUpRight aria-hidden="true" />
+                  </a>
+                  <a className="mobile-portal-link" href={corporatePortalUrl} target="_blank" rel="noreferrer" onClick={() => setMobileOpen(false)}>
+                    <span>08</span>Portal corporativo<ArrowUpRight aria-hidden="true" />
                   </a>
                 </nav>
                 <div className="mobile-sheet-mark" aria-hidden="true">
@@ -535,7 +557,7 @@ export default function AltumSite() {
             <span>03</span><p>Servicios</p>
           </div>
           <div className="section-heading services-heading" data-reveal>
-            <h2>Una visión completa. Seis frentes que trabajan juntos.</h2>
+            <h2>Una visión completa. Siete frentes que trabajan juntos.</h2>
             <p>
               Elige un servicio para conocer el alcance. Podemos integrar varias áreas o
               concentrarnos en la necesidad que hoy requiere atención.
@@ -771,6 +793,7 @@ export default function AltumSite() {
           <div className="footer-action">
             <span>¿Empezamos?</span>
             <DialogTrigger>Preparar mi consulta <ArrowUpRight aria-hidden="true" /></DialogTrigger>
+            <a href={corporatePortalUrl} target="_blank" rel="noreferrer">Portal corporativo <ArrowUpRight aria-hidden="true" /></a>
           </div>
         </div>
         <div className="footer-bottom">

@@ -1,4 +1,4 @@
-export type ServiceIconKey = 'calculator' | 'landmark' | 'users' | 'chart' | 'audit' | 'briefcase';
+export type ServiceIconKey = 'calculator' | 'landmark' | 'users' | 'chart' | 'audit' | 'building' | 'briefcase';
 
 export type Service = {
   slug: string;
@@ -23,6 +23,8 @@ export const navItems = [
   ['Nosotros', 'nosotros/'],
   ['Recursos', 'recursos/'],
 ] as const;
+
+export const corporatePortalUrl = 'https://altumlumen-design.github.io/Altum-Lumen-S.A.C./';
 
 export const services: Service[] = [
   {
@@ -181,8 +183,39 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: 'asesoria-empresarial',
+    slug: 'contabilidad-gubernamental',
     number: '06',
+    short: 'Sector público',
+    title: 'Contabilidad gubernamental',
+    eyebrow: 'Información pública con orden y trazabilidad',
+    summary: 'Brindamos asistencia técnica para ordenar procesos contables, cierres y rendición de información en entidades y proyectos vinculados al sector público.',
+    promise: 'Procesos contables públicos documentados, consistentes y alineados con sus obligaciones de información.',
+    icon: 'building',
+    coverage: [
+      'Diagnóstico de procesos y saldos contables',
+      'Asistencia en cierres contables y conciliaciones',
+      'Revisión de información financiera y presupuestaria',
+      'Ordenamiento de sustentos y expedientes',
+      'Acompañamiento en rendición de cuentas',
+      'Capacitación y asistencia técnica al equipo responsable',
+    ],
+    deliverables: ['Diagnóstico y matriz de brechas', 'Cronograma de cierre', 'Reporte de observaciones', 'Plan de regularización y seguimiento'],
+    idealFor: ['Entidades que necesitan ordenar un cierre contable', 'Equipos con saldos u observaciones pendientes', 'Proyectos que requieren asistencia técnica especializada'],
+    process: [
+      { title: 'Marco y alcance', description: 'Identificamos entidad, periodo, sistemas, responsables y entregables requeridos.' },
+      { title: 'Revisión', description: 'Contrastamos saldos, conciliaciones, documentos e información financiera y presupuestaria.' },
+      { title: 'Regularización', description: 'Priorizamos brechas y organizamos una ruta de corrección documentada.' },
+      { title: 'Cierre y transferencia', description: 'Acompañamos los hitos y dejamos criterios, pendientes y responsabilidades visibles.' },
+    ],
+    faq: [
+      { question: '¿El servicio se adapta a cada entidad?', answer: 'Sí. El alcance depende del marco aplicable, los sistemas utilizados, el periodo y el estado de la información.' },
+      { question: '¿Pueden apoyar un cierre con observaciones pendientes?', answer: 'Sí. Primero se dimensionan las brechas y luego se propone una ruta de regularización con prioridades y responsables.' },
+      { question: '¿Incluye capacitación?', answer: 'Puede incorporarse asistencia técnica para que el equipo responsable comprenda criterios, controles y entregables.' },
+    ],
+  },
+  {
+    slug: 'asesoria-empresarial',
+    number: '07',
     short: 'Empresa',
     title: 'Asesoría empresarial',
     eyebrow: 'Estructura para la siguiente etapa',
@@ -215,12 +248,13 @@ export const services: Service[] = [
 
 export const teamProfiles = [
   {
-    name: 'Jean Franco Vargas Luque',
-    role: 'Contador público',
-    status: 'Perfil propuesto',
+    name: 'Jeanfranco Martín Vargas Luque',
+    role: 'Contador público · Responsable del estudio contable',
+    status: 'Dirección del estudio',
     initials: 'JV',
-    focus: ['Dirección contable', 'Cierres y estados financieros', 'Lectura gerencial'],
-    description: 'Responsable de integrar el trabajo contable con una lectura clara de resultados, pendientes y decisiones.',
+    image: 'team-jeanfranco.webp',
+    focus: ['Dirección contable', 'Tributación', 'Contabilidad gubernamental'],
+    description: 'Dirige la atención del estudio e integra el trabajo contable con una lectura clara de obligaciones, resultados y decisiones.',
   },
   {
     name: 'Especialista por confirmar',

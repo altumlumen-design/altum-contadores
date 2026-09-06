@@ -12,7 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { navItems } from './site-content';
+import { corporatePortalUrl, navItems } from './site-content';
 import { assetPath, sitePath } from './site-paths';
 
 type SiteChromeProps = {
@@ -31,8 +31,7 @@ export default function SiteChrome({ children, active }: SiteChromeProps) {
           <img src={assetPath('altum-logo.png')} alt="Altum Contadores y Asociados" width={1200} height={360} />
         </a>
         <a className="brand-mobile" href={sitePath()} aria-label="Altum Contadores y Asociados — inicio">
-          <img src={assetPath('altum-symbol.png')} alt="" width={1024} height={808} />
-          <span>ALTUM</span>
+          <img src={assetPath('altum-logo.png')} alt="Altum Contadores y Asociados" width={1200} height={360} />
         </a>
 
         <nav className="desktop-nav" aria-label="Navegación principal">
@@ -49,6 +48,9 @@ export default function SiteChrome({ children, active }: SiteChromeProps) {
         </nav>
 
         <div className="header-actions">
+          <a className="header-portal" href={corporatePortalUrl} target="_blank" rel="noreferrer">
+            Portal corporativo <ArrowUpRight aria-hidden="true" />
+          </a>
           <a className="header-cta" href={sitePath('contacto/')}>
             Hablemos <ArrowUpRight aria-hidden="true" />
           </a>
@@ -72,6 +74,9 @@ export default function SiteChrome({ children, active }: SiteChromeProps) {
                 ))}
                 <a href={sitePath('contacto/')} onClick={() => setMobileOpen(false)}>
                   <span>07</span>Contacto<ArrowUpRight aria-hidden="true" />
+                </a>
+                <a className="mobile-portal-link" href={corporatePortalUrl} target="_blank" rel="noreferrer" onClick={() => setMobileOpen(false)}>
+                  <span>08</span>Portal corporativo<ArrowUpRight aria-hidden="true" />
                 </a>
               </nav>
               <div className="mobile-sheet-mark" aria-hidden="true">
@@ -102,6 +107,7 @@ export default function SiteChrome({ children, active }: SiteChromeProps) {
           <div className="footer-action">
             <span>¿Empezamos?</span>
             <a href={sitePath('contacto/')}>Preparar mi consulta <ArrowUpRight aria-hidden="true" /></a>
+            <a href={corporatePortalUrl} target="_blank" rel="noreferrer">Portal corporativo <ArrowUpRight aria-hidden="true" /></a>
           </div>
         </div>
         <div className="footer-bottom">
