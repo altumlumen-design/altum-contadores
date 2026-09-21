@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import SiteTextOverrides from './site-text-overrides';
 
 export const metadata: Metadata = {
   title: 'Altum Contadores y Asociados | Asesoría empresarial y contable',
@@ -10,7 +11,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        <SiteTextOverrides />
+        {children}
+      </body>
     </html>
   );
 }
