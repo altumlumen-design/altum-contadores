@@ -11,11 +11,23 @@ import {
   LineChart,
   Network,
   ShieldCheck,
+  Sparkles,
   Users,
 } from 'lucide-react';
 import SiteChrome from './site-chrome';
-import { services, type ServiceIconKey } from './site-content';
+import { services } from './site-content';
 import { sitePath } from './site-paths';
+
+const marketingService = {
+  slug: 'marketing-construccion-marca',
+  number: '08',
+  short: 'Marca',
+  title: 'Marketing y construcción de marca',
+  summary: 'Estrategia, identidad y comunicación para construir una marca coherente, reconocible y preparada para crecer.',
+  icon: 'sparkles',
+} as const;
+
+const catalogServices = [...services, marketingService];
 
 const iconMap = {
   calculator: Calculator,
@@ -25,7 +37,8 @@ const iconMap = {
   audit: FileSearch,
   building: Building2,
   briefcase: BriefcaseBusiness,
-} satisfies Record<ServiceIconKey, typeof Calculator>;
+  sparkles: Sparkles,
+} as const;
 
 export default function ServicesOverviewPage() {
   return (
@@ -34,8 +47,8 @@ export default function ServicesOverviewPage() {
         <div className="inner-hero-grid" aria-hidden="true" />
         <div className="inner-hero-copy inner-shell">
           <div className="page-kicker"><span>01</span>Servicios</div>
-          <h1>Una firma.<br /><span>Siete perspectivas.</span></h1>
-          <p>Integramos contabilidad, tributación, personas y finanzas para que cada frente de la empresa avance con la misma información.</p>
+          <h1>Una firma.<br /><span>Ocho perspectivas.</span></h1>
+          <p>Integramos contabilidad, tributación, personas, finanzas, gestión empresarial y construcción de marca para acompañar el crecimiento con una sola lectura.</p>
           <a className="inner-primary-link" href={sitePath('contacto/')}>Encontrar el servicio adecuado <ArrowUpRight aria-hidden="true" /></a>
         </div>
         <div className="inner-hero-aside" aria-hidden="true">
@@ -51,8 +64,8 @@ export default function ServicesOverviewPage() {
           <p>Cada servicio puede trabajar de forma independiente o combinarse según el momento, el volumen y la complejidad de tu operación.</p>
         </div>
         <div className="catalog-grid">
-          {services.map((service) => {
-            const Icon = iconMap[service.icon];
+          {catalogServices.map((service) => {
+            const Icon = iconMap[service.icon as keyof typeof iconMap];
             return (
               <a className="catalog-card" href={sitePath(`servicios/${service.slug}/`)} key={service.slug}>
                 <div className="catalog-card-top"><span>{service.number}</span><Icon aria-hidden="true" /></div>
