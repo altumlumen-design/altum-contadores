@@ -4,7 +4,7 @@ import SiteTextOverrides from './site-text-overrides';
 import SiteEnhancements from './site-enhancements';
 import AppsMenu from './apps-menu';
 import MobileUxTweaks from './mobile-ux-tweaks';
-import BrandThemeRefresh from './brand-theme-refresh';
+import BrandToneTweak from './brand-tone-tweak';
 import { sitePath } from './site-paths';
 
 export const metadata: Metadata = {
@@ -17,16 +17,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es">
       <head>
-        <link rel="icon" type="image/png" href={sitePath('altum-favicon.png?v=20260922-2')} />
-        <link rel="shortcut icon" type="image/png" href={sitePath('altum-favicon.png?v=20260922-2')} />
-        <link rel="apple-touch-icon" href={sitePath('apple-icon.png?v=20260922-2')} />
+        <link rel="icon" type="image/png" href={sitePath('altum-favicon.png?v=20260922-3')} />
+        <link rel="shortcut icon" type="image/png" href={sitePath('altum-favicon.png?v=20260922-3')} />
+        <link rel="apple-touch-icon" href={sitePath('apple-icon.png?v=20260922-3')} />
       </head>
       <body>
         <SiteTextOverrides />
         <AppsMenu />
         <SiteEnhancements />
         <MobileUxTweaks />
-        <BrandThemeRefresh />
+        <BrandToneTweak />
         {children}
       </body>
     </html>
