@@ -23,7 +23,7 @@ const marketingService = {
   number: '08',
   short: 'Marca',
   title: 'Marketing y construcción de marca',
-  summary: 'Estrategia, identidad y comunicación para construir una marca coherente, reconocible y preparada para crecer.',
+  summary: 'Estrategia, identidad y comunicación para que la marca responda con claridad a la propuesta de valor y al crecimiento del negocio.',
   icon: 'sparkles',
 } as const;
 
