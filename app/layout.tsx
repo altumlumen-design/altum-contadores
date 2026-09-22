@@ -5,6 +5,7 @@ import SiteEnhancements from './site-enhancements';
 import AppsMenu from './apps-menu';
 import MobileUxTweaks from './mobile-ux-tweaks';
 import BrandToneTweak from './brand-tone-tweak';
+import FooterIconFix from './footer-icon-fix';
 import { sitePath } from './site-paths';
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteEnhancements />
         <MobileUxTweaks />
         <BrandToneTweak />
+        <FooterIconFix />
         {children}
       </body>
     </html>
