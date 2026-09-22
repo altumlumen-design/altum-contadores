@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: 'Altum Contadores y Asociados | Asesoría empresarial y contable',
   description:
     'Contabilidad, tributación, gestión laboral, finanzas, auditoría, asesoría empresarial, construcción de marca y herramientas empresariales.',
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/favicon.ico',
+    apple: '/apple-icon.png',
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
