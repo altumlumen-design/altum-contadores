@@ -183,7 +183,7 @@ export default function AppsMenu() {
         <summary className={isAppsRoute ? 'apps-active' : undefined}>Apps</summary>
         <div className="apps-nav-popover">
           {appLinks.map(([label, anchor, Icon]) => (
-            <a href={sitePath(`apps/#${anchor}`)} key={anchor}>
+            <a href={sitePath(`apps/${anchor}/`)} key={anchor}>
               <Icon aria-hidden="true" />
               <strong>{label}</strong>
               <ArrowRight aria-hidden="true" />

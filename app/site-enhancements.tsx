@@ -200,7 +200,7 @@ export default function SiteEnhancements() {
 
           <div className="home-apps-grid">
             {homeApps.map(([title, description, anchor, Icon]) => (
-              <a className="home-app-card" href={sitePath(`apps/#${anchor}`)} key={anchor}>
+              <a className="home-app-card" href={sitePath(`apps/${anchor}/`)} key={anchor}>
                 <Icon aria-hidden="true" />
                 <div>
                   <h4>{title}</h4>
