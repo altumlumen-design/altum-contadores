@@ -126,9 +126,9 @@ export default function AppsMenu() {
         .apps-nav-popover {
           position: absolute;
           z-index: 90;
-          top: calc(100% + 16px);
+          top: calc(100% + 12px);
           right: -18px;
-          width: min(360px, 88vw);
+          width: min(340px, 88vw);
           padding: 10px;
           border: 1px solid #d6e0ed;
           background: rgba(255,255,255,.98);
@@ -148,7 +148,7 @@ export default function AppsMenu() {
           grid-template-columns: 34px 1fr 18px;
           gap: 12px;
           align-items: center;
-          min-height: 56px;
+          min-height: 50px;
           padding: 10px 11px !important;
           color: #17304b !important;
           text-decoration: none;

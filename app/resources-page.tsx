@@ -52,17 +52,59 @@ export default function ResourcesPage() {
     <SiteChrome active="Apps">
       <style>{`
         .apps-hero .inner-hero-copy p { max-width: 730px; }
-        .apps-index { padding-block: 110px 80px; }
+
+        .apps-quick-nav-wrap {
+          position: relative;
+          z-index: 4;
+          margin-top: -26px;
+        }
+        .apps-quick-nav {
+          padding-inline: clamp(16px, 4vw, 26px);
+        }
+        .apps-quick-scroll {
+          display: flex;
+          gap: 10px;
+          overflow-x: auto;
+          padding: 0 0 6px;
+          scrollbar-width: none;
+        }
+        .apps-quick-scroll::-webkit-scrollbar { display: none; }
+        .apps-chip {
+          flex: 0 0 auto;
+          display: inline-flex;
+          align-items: center;
+          gap: 9px;
+          min-height: 42px;
+          padding: 0 14px;
+          border: 1px solid #d3dfea;
+          border-radius: 999px;
+          background: rgba(255,255,255,.96);
+          color: #17304b;
+          text-decoration: none;
+          box-shadow: 0 16px 36px rgba(17, 44, 78, .08);
+          white-space: nowrap;
+          font-size: .82rem;
+          font-weight: 600;
+        }
+        .apps-chip svg {
+          width: 16px;
+          height: 16px;
+          color: #2673b9;
+        }
+
+        .apps-index {
+          padding-block: 66px 56px;
+        }
         .apps-index-grid {
-          margin-top: 54px;
+          margin-top: 36px;
           display: grid;
           grid-template-columns: repeat(5, minmax(0, 1fr));
           border-top: 1px solid #cfdae7;
           border-left: 1px solid #cfdae7;
         }
         .apps-index-card {
-          min-height: 230px;
-          padding: 24px;
+          min-height: 178px;
+          padding: 18px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -71,11 +113,12 @@ export default function ResourcesPage() {
           border-right: 1px solid #cfdae7;
           border-bottom: 1px solid #cfdae7;
           background: white;
-          transition: transform 180ms ease, background 180ms ease;
+          transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
         }
         .apps-index-card:hover {
           background: #f3f8ff;
           transform: translateY(-3px);
+          box-shadow: 0 20px 48px rgba(17, 52, 91, .08);
         }
         .apps-index-card > div:first-child {
           display: flex;
@@ -84,56 +127,62 @@ export default function ResourcesPage() {
           gap: 12px;
           color: #658098;
           font-family: var(--font-geist-mono), monospace;
-          font-size: .76rem;
+          font-size: .72rem;
         }
-        .apps-index-card svg { width: 21px; color: #2673b9; }
+        .apps-index-card svg { width: 19px; color: #2673b9; }
         .apps-index-card h3 {
-          margin: 32px 0 12px;
-          font-size: 1.25rem;
+          margin: 18px 0 9px;
+          font-size: 1rem;
+          line-height: 1.08;
           letter-spacing: -.03em;
         }
         .apps-index-card p {
           margin: 0;
           color: #677b91;
-          font-size: .88rem;
-          line-height: 1.58;
+          font-size: .8rem;
+          line-height: 1.5;
         }
         .apps-index-card .apps-open {
-          margin-top: 24px;
+          margin-top: 16px;
           display: inline-flex;
           align-items: center;
           gap: 7px;
           color: #0c5da8;
-          font-size: .78rem;
+          font-size: .75rem;
           font-weight: 650;
         }
+
         .apps-tools-shell {
-          padding-block: 70px 150px;
+          padding-block: 24px 110px;
           display: grid;
-          gap: 50px;
+          gap: 28px;
         }
         .app-anchor {
-          scroll-margin-top: 110px;
+          scroll-margin-top: 116px;
         }
+
         .altum-app-tool {
           border: 1px solid #cbd7e7;
           background: white;
-          box-shadow: 0 28px 85px rgba(15,46,90,.07);
+          box-shadow: 0 24px 70px rgba(15,46,90,.07);
           overflow: hidden;
+          border-radius: 18px;
         }
         .altum-app-tool-head {
-          min-height: 190px;
+          min-height: 154px;
           display: flex;
           justify-content: space-between;
-          gap: 30px;
+          gap: 24px;
           align-items: flex-start;
-          padding: clamp(28px, 5vw, 52px);
-          background: #07182c;
+          padding: clamp(22px, 4vw, 38px);
+          background:
+            radial-gradient(circle at top right, rgba(67, 146, 219, .18), transparent 32%),
+            linear-gradient(180deg, #0a1a31 0%, #0f213b 100%);
           color: white;
         }
         .altum-app-tool-head > svg {
           flex: 0 0 auto;
-          width: clamp(38px, 7vw, 68px);
+          width: clamp(30px, 6vw, 56px);
           height: auto;
           color: #82bff5;
           opacity: .9;
@@ -142,115 +191,190 @@ export default function ResourcesPage() {
           display: block;
           color: #83bdf1;
           font-family: var(--font-geist-mono), monospace;
-          font-size: .72rem;
+          font-size: .7rem;
           letter-spacing: .09em;
           text-transform: uppercase;
         }
         .altum-app-tool-head h3 {
-          margin: 17px 0 12px;
-          font-size: clamp(2rem, 4vw, 3.5rem);
+          margin: 12px 0 10px;
+          font-size: clamp(1.52rem, 4vw, 2.55rem);
           line-height: .98;
-          letter-spacing: -.055em;
+          letter-spacing: -.05em;
         }
         .altum-app-tool-head p {
           margin: 0;
-          max-width: 720px;
+          max-width: 640px;
           color: #b9c9db;
-          line-height: 1.65;
+          line-height: 1.55;
+          font-size: .9rem;
         }
         .altum-app-tool-body {
-          padding: clamp(26px, 5vw, 50px);
+          padding: clamp(18px, 4vw, 30px);
         }
+
         .altum-app-input-grid {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 20px;
+          gap: 14px;
         }
         .altum-app-input-grid.three {
           grid-template-columns: repeat(3, minmax(0, 1fr));
         }
         .altum-app-input-grid label {
           color: #687d94;
-          font-size: .8rem;
+          font-size: .78rem;
         }
         .altum-app-input-grid label > div {
-          margin-top: 9px;
+          margin-top: 8px;
           display: grid;
           grid-template-columns: auto 1fr;
           align-items: center;
           border: 1px solid #bdccdc;
+          border-radius: 14px;
           background: white;
         }
         .altum-app-input-grid label > div > span {
-          padding-left: 14px;
+          padding-left: 12px;
           color: #6f8298;
+          font-size: .92rem;
         }
         .altum-app-input-grid input {
           width: 100%;
           min-width: 0;
-          min-height: 56px;
+          min-height: 50px;
           border: 0;
           outline: 0;
           background: transparent;
-          padding: 11px 14px;
+          padding: 10px 12px;
           color: #152f49;
           font: inherit;
-          font-size: 1.2rem;
+          font-size: 1.04rem;
           font-weight: 650;
         }
+
         .altum-app-results {
-          margin-top: 28px;
+          margin-top: 18px;
           display: grid;
           grid-template-columns: repeat(3, minmax(0, 1fr));
           border-top: 1px solid #d7e1ec;
           border-left: 1px solid #d7e1ec;
+          border-radius: 14px;
+          overflow: hidden;
         }
         .altum-app-results article {
-          min-height: 150px;
-          padding: 24px;
+          min-height: 120px;
+          padding: 18px;
           border-right: 1px solid #d7e1ec;
           border-bottom: 1px solid #d7e1ec;
+          background: #fbfdff;
         }
         .altum-app-results span {
           display: block;
           color: #70849a;
-          font-size: .72rem;
+          font-size: .68rem;
           text-transform: uppercase;
           letter-spacing: .07em;
         }
         .altum-app-results strong {
           display: block;
-          margin-top: 24px;
+          margin-top: 16px;
           color: #142c46;
-          font-size: clamp(1.5rem, 3.5vw, 2.5rem);
-          letter-spacing: -.045em;
+          font-size: clamp(1.2rem, 3.5vw, 2rem);
+          letter-spacing: -.04em;
           line-height: 1.08;
         }
         .altum-app-note {
-          margin: 18px 0 0;
+          margin: 14px 0 0;
           color: #74869a;
-          font-size: .78rem;
-          line-height: 1.6;
-        }
-        .altum-app-warning {
-          margin-top: 26px;
-          padding: 18px;
-          border: 1px solid #e4b9b9;
-          background: #fff6f6;
-          color: #8a3434;
+          font-size: .76rem;
           line-height: 1.55;
         }
+        .altum-app-warning {
+          margin-top: 18px;
+          padding: 15px;
+          border: 1px solid #e4b9b9;
+          border-radius: 14px;
+          background: #fff6f6;
+          color: #8a3434;
+          line-height: 1.5;
+          font-size: .85rem;
+        }
+
         @media (max-width: 1050px) {
           .apps-index-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
           .altum-app-input-grid.three { grid-template-columns: 1fr; }
         }
+
         @media (max-width: 760px) {
-          .apps-index { padding-block: 80px 55px; }
-          .apps-index-grid { grid-template-columns: 1fr; }
-          .apps-index-card { min-height: 190px; }
-          .apps-tools-shell { padding-block: 40px 100px; gap: 36px; }
-          .altum-app-input-grid, .altum-app-results { grid-template-columns: 1fr; }
-          .altum-app-tool-head { min-height: 0; }
+          .apps-quick-nav-wrap {
+            margin-top: -12px;
+          }
+          .apps-quick-nav {
+            padding-inline: 16px;
+          }
+          .apps-chip {
+            min-height: 39px;
+            padding-inline: 12px;
+            font-size: .76rem;
+          }
+          .apps-index {
+            padding-block: 34px 26px;
+          }
+          .apps-index-grid {
+            margin-top: 22px;
+            grid-template-columns: 1fr 1fr;
+          }
+          .apps-index-card {
+            min-height: 148px;
+            padding: 14px;
+          }
+          .apps-index-card h3 {
+            margin-top: 10px;
+            font-size: .92rem;
+          }
+          .apps-index-card p {
+            font-size: .74rem;
+          }
+          .apps-tools-shell {
+            padding-block: 12px 88px;
+            gap: 18px;
+          }
+          .app-anchor {
+            scroll-margin-top: 92px;
+          }
+          .altum-app-tool {
+            border-radius: 16px;
+          }
+          .altum-app-tool-head {
+            min-height: 0;
+            gap: 14px;
+            padding: 18px 16px;
+          }
+          .altum-app-tool-head h3 {
+            font-size: 1.3rem;
+            margin-top: 8px;
+          }
+          .altum-app-tool-head p {
+            font-size: .82rem;
+            line-height: 1.45;
+          }
+          .altum-app-tool-body {
+            padding: 14px;
+          }
+          .altum-app-input-grid,
+          .altum-app-results {
+            grid-template-columns: 1fr;
+          }
+          .altum-app-results article {
+            min-height: 0;
+            padding: 15px;
+          }
+        }
+
+        @media (max-width: 520px) {
+          .apps-index-grid {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
 
@@ -273,13 +397,29 @@ export default function ResourcesPage() {
         </div>
       </section>
 
+      <div className="apps-quick-nav-wrap">
+        <div className="apps-quick-nav inner-shell">
+          <div className="apps-quick-scroll" aria-label="Navegación rápida de apps">
+            {apps.map((app) => {
+              const Icon = app.icon;
+              return (
+                <a className="apps-chip" href={`#${app.anchor}`} key={app.anchor}>
+                  <Icon aria-hidden="true" />
+                  <span>{app.title}</span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
       <section className="apps-index inner-shell" id="apps-index">
         <div className="page-section-heading">
           <div className="section-kicker"><span>01</span><p>Centro de herramientas</p></div>
           <h2>Elige una app y calcula.</h2>
           <p>
-            No necesitas registrarte. Los cálculos se realizan en tu navegador y sirven como
-            referencia inicial para ordenar una decisión o preparar una consulta.
+            Todo está en una sola página, pero ahora con accesos directos y una interfaz más compacta
+            para que en celular no tengas que desplazarte tanto.
           </p>
         </div>
 

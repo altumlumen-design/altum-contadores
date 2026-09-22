@@ -3,6 +3,7 @@ import './globals.css';
 import SiteTextOverrides from './site-text-overrides';
 import SiteEnhancements from './site-enhancements';
 import AppsMenu from './apps-menu';
+import MobileUxTweaks from './mobile-ux-tweaks';
 
 export const metadata: Metadata = {
   title: 'Altum Contadores y Asociados | Asesoría empresarial y contable',
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteTextOverrides />
         <AppsMenu />
         <SiteEnhancements />
+        <MobileUxTweaks />
         {children}
       </body>
     </html>

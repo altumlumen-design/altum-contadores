@@ -179,7 +179,7 @@ export default function DaysCalculator() {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
           gap: 18px;
-          margin-top: 28px;
+          margin-top: 18px;
         }
         .days-label {
           display: block;
@@ -199,7 +199,7 @@ export default function DaysCalculator() {
           outline: none;
         }
         .days-result {
-          margin-top: 28px;
+          margin-top: 18px;
           padding: clamp(24px, 4vw, 38px);
           background: #07182c;
           color: white;
@@ -236,7 +236,7 @@ export default function DaysCalculator() {
           gap: 14px;
           justify-content: space-between;
           align-items: center;
-          padding: 15px 17px;
+          padding: 13px 14px;
           border: 1px solid #d8e2ed;
           background: #f7faff;
           color: #61758c;
@@ -253,8 +253,36 @@ export default function DaysCalculator() {
           white-space: nowrap;
         }
         @media (max-width: 620px) {
-          .days-result { grid-template-columns: 1fr; }
-          .days-result-number { text-align: left; }
+          .days-mode-grid, .days-kind-grid {
+            grid-template-columns: 1fr;
+          }
+          .days-tool-button {
+            min-height: 46px;
+            font-size: .84rem;
+          }
+          .days-form-grid {
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 18px;
+          }
+          .days-label input, .days-label select {
+            min-height: 46px;
+          }
+          .days-result { 
+            grid-template-columns: 1fr;
+            margin-top: 18px;
+            padding: 16px;
+            gap: 10px;
+          }
+          .days-result strong {
+            font-size: 1.45rem;
+          }
+          .days-result-number { text-align: left; font-size: 2.2rem; }
+          .days-official {
+            margin-top: 12px;
+            padding: 12px;
+            font-size: .76rem;
+          }
         }
       `}</style>
 

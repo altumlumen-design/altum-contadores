@@ -50,16 +50,36 @@ export default function IgvCalculator() {
   }, [amount, mode]);
 
   return (
-    <div
+    <>
+      <style>{`
+        @media (max-width: 760px) {
+          .altum-igv-card .igv-top-grid { grid-template-columns: 1fr !important; }
+          .altum-igv-card .igv-panel,
+          .altum-igv-card .igv-entry-panel { padding: 16px !important; }
+          .altum-igv-card .igv-kicker { margin-bottom: 14px !important; font-size: 11px !important; }
+          .altum-igv-card h3 { font-size: 1.3rem !important; }
+          .altum-igv-card p { margin-top: 10px !important; font-size: .82rem !important; line-height: 1.45 !important; }
+          .altum-igv-card .igv-mode-grid { grid-template-columns: 1fr 1fr !important; margin-bottom: 16px !important; }
+          .altum-igv-card .igv-mode-grid button { min-height: 44px !important; font-size: .76rem !important; }
+          .altum-igv-card .igv-input-currency { font-size: 18px !important; }
+          .altum-igv-card .igv-input-field { font-size: 1.55rem !important; }
+          .altum-igv-card .igv-results { grid-template-columns: 1fr !important; }
+          .altum-igv-card .igv-result-card { min-height: 0 !important; padding: 15px !important; border-right: 0 !important; border-bottom: 1px solid #dce4ef !important; }
+          .altum-igv-card .igv-result-card:last-child { border-bottom: 0 !important; }
+          .altum-igv-card .igv-result-card strong { margin-top: 12px !important; font-size: 1.45rem !important; }
+          .altum-igv-card .igv-helper { padding: 14px 16px !important; font-size: 11px !important; }
+        }
+      `}</style>
+      <div className="altum-igv-card"
       style={{
-        marginTop: 54,
+        marginTop: 0,
         border: '1px solid #cbd7e7',
         background: '#ffffff',
         boxShadow: '0 30px 80px rgb(15 46 90 / 8%)',
         overflow: 'hidden',
       }}
     >
-      <div
+      <div className="igv-top-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -67,13 +87,13 @@ export default function IgvCalculator() {
           color: 'white',
         }}
       >
-        <div style={{ padding: 'clamp(28px, 5vw, 54px)' }}>
-          <div
+        <div className="igv-panel" style={{ padding: 'clamp(24px, 4vw, 42px)' }}>
+          <div className="igv-kicker"
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: 12,
-              marginBottom: 30,
+              marginBottom: 22,
               color: '#8dc6ff',
               fontSize: 13,
               letterSpacing: '.09em',
@@ -107,8 +127,8 @@ export default function IgvCalculator() {
           </p>
         </div>
 
-        <div style={{ padding: 'clamp(28px, 5vw, 54px)', background: '#0d2340' }}>
-          <div
+        <div className="igv-entry-panel" style={{ padding: 'clamp(24px, 4vw, 42px)', background: '#0d2340' }}>
+          <div className="igv-mode-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
@@ -161,12 +181,13 @@ export default function IgvCalculator() {
                 borderBottom: '1px solid #6f86a1',
               }}
             >
-              <span style={{ padding: '10px 10px 10px 0', fontSize: 24, color: '#8dc6ff' }}>S/</span>
+              <span className="igv-input-currency" style={{ padding: '10px 10px 10px 0', fontSize: 24, color: '#8dc6ff' }}>S/</span>
               <input
                 value={amount}
                 onChange={(event) => setAmount(event.target.value)}
                 inputMode="decimal"
                 aria-label="Importe en soles"
+                className="igv-input-field"
                 style={{
                   width: '100%',
                   minWidth: 0,
@@ -225,7 +246,7 @@ export default function IgvCalculator() {
         </div>
       </div>
 
-      <div
+      <div className="igv-top-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))',
@@ -237,7 +258,7 @@ export default function IgvCalculator() {
           ['IGV (18%)', values.igv],
           ['Total', values.total],
         ].map(([label, value], index) => (
-          <div
+          <div className="igv-result-card"
             key={label as string}
             style={{
               minHeight: 160,
@@ -270,9 +291,9 @@ export default function IgvCalculator() {
         ))}
       </div>
 
-      <div
+      <div className="igv-helper"
         style={{
-          padding: '18px 28px 22px',
+          padding: '16px 22px 18px',
           borderTop: '1px solid #dce4ef',
           color: '#718298',
           fontSize: 12,
@@ -284,5 +305,6 @@ export default function IgvCalculator() {
         inafectaciones, percepciones, retenciones, detracciones ni tratamientos especiales.
       </div>
     </div>
+    </>
   );
 }

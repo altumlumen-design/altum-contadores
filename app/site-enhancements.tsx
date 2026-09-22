@@ -70,9 +70,9 @@ export default function SiteEnhancements() {
           text-decoration: none;
         }
         .home-apps-showcase {
-          margin-top: clamp(70px, 8vw, 110px);
+          margin-top: clamp(44px, 6vw, 84px);
           border-top: 1px solid #cbd7e7;
-          padding-top: 42px;
+          padding-top: 28px;
         }
         .home-apps-head {
           display: flex;
@@ -112,8 +112,8 @@ export default function SiteEnhancements() {
           border-left: 1px solid #d3deea;
         }
         .home-app-card {
-          min-height: 210px;
-          padding: 22px;
+          min-height: 176px;
+          padding: 18px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -134,8 +134,9 @@ export default function SiteEnhancements() {
           color: #2876bb;
         }
         .home-app-card h4 {
-          margin: 30px 0 10px;
-          font-size: 1.03rem;
+          margin: 16px 0 8px;
+          font-size: .98rem;
+          line-height: 1.1;
           letter-spacing: -.025em;
         }
         .home-app-card p {
@@ -157,10 +158,18 @@ export default function SiteEnhancements() {
           .home-apps-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
         @media (max-width: 700px) {
-          .home-apps-head { display: block; }
-          .home-apps-head > a { margin-top: 22px; }
+          .home-apps-head { display: block; margin-bottom: 18px; }
+          .home-apps-head > a { margin-top: 14px; }
+          .home-apps-head h3 { font-size: clamp(1.6rem, 8vw, 2.15rem); }
+          .home-apps-grid { grid-template-columns: 1fr 1fr; }
+          .home-app-card { min-height: 132px; padding: 14px; }
+          .home-app-card svg { width: 18px; height: 18px; }
+          .home-app-card h4 { margin: 10px 0 6px; font-size: .9rem; }
+          .home-app-card p { font-size: .74rem; line-height: 1.45; }
+          .home-app-card span { margin-top: 14px; font-size: .72rem; }
+        }
+        @media (max-width: 520px) {
           .home-apps-grid { grid-template-columns: 1fr; }
-          .home-app-card { min-height: 175px; }
         }
       `}</style>
 
