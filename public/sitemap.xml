@@ -2,26 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://altumlumen-design.github.io/altum-contadores/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <image:image><image:loc>https://altumlumen-design.github.io/altum-contadores/altum-logo.png</image:loc><image:title>Altum Contadores y Asociados</image:title></image:image>
   </url>
-  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://altumlumen-design.github.io/altum-contadores/metodo/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/metodo/</loc><lastmod>2026-10-19</lastmod></url>
   <url>
     <loc>https://altumlumen-design.github.io/altum-contadores/equipo/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <image:image><image:loc>https://altumlumen-design.github.io/altum-contadores/team-jeanfranco.webp</image:loc><image:title>Jeanfranco Martín Vargas Luque</image:title></image:image>
   </url>
-  <url><loc>https://altumlumen-design.github.io/altum-contadores/nosotros/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://altumlumen-design.github.io/altum-contadores/recursos/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://altumlumen-design.github.io/altum-contadores/contacto/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/outsourcing-contable/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/asesoria-tributaria/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/gestion-laboral-planillas/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/finanzas-control-gestion/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/auditoria-cumplimiento/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/contabilidad-gubernamental/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/asesoria-empresarial/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/marketing-construccion-marca/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://altumlumen-design.github.io/altum-contadores/apps/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/nosotros/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/contacto/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/outsourcing-contable/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/asesoria-tributaria/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/gestion-laboral-planillas/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/finanzas-control-gestion/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/auditoria-cumplimiento/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/contabilidad-gubernamental/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/asesoria-empresarial/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/servicios/marketing-construccion-marca/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/apps/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/apps/igv/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/apps/dias/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/apps/margen/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/apps/equilibrio/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://altumlumen-design.github.io/altum-contadores/apps/variacion/</loc><lastmod>2026-10-19</lastmod></url>
 </urlset>

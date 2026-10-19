@@ -7,6 +7,9 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'Margen y utilidad | Altum Contadores y Asociados',
   description: 'Calcula utilidad, margen sobre ventas y rendimiento sobre costo.',
+  alternates: {
+    canonical: 'https://altumlumen-design.github.io/altum-contadores/apps/margen/',
+  },
 };
 
 export default function Page() {

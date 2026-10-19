@@ -7,6 +7,9 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'Calculadora de IGV | Altum Contadores y Asociados',
   description: 'Calcula base imponible, IGV y total a partir de un monto con o sin impuesto.',
+  alternates: {
+    canonical: 'https://altumlumen-design.github.io/altum-contadores/apps/igv/',
+  },
 };
 
 export default function Page() {

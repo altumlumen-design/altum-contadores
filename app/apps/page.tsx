@@ -6,6 +6,9 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'Apps empresariales | Altum Contadores y Asociados',
   description: 'Calculadoras gratuitas de IGV, días hábiles y calendario, margen, punto de equilibrio y variación porcentual.',
+  alternates: {
+    canonical: 'https://altumlumen-design.github.io/altum-contadores/apps/',
+  },
 };
 
 export default function Page() {

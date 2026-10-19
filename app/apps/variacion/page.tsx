@@ -7,6 +7,9 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'Variación porcentual | Altum Contadores y Asociados',
   description: 'Compara dos periodos y calcula el aumento o disminución porcentual.',
+  alternates: {
+    canonical: 'https://altumlumen-design.github.io/altum-contadores/apps/variacion/',
+  },
 };
 
 export default function Page() {

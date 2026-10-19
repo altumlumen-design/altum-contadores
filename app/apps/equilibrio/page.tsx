@@ -7,6 +7,9 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'Punto de equilibrio | Altum Contadores y Asociados',
   description: 'Estima cuántas unidades necesitas vender para cubrir los costos fijos.',
+  alternates: {
+    canonical: 'https://altumlumen-design.github.io/altum-contadores/apps/equilibrio/',
+  },
 };
 
 export default function Page() {

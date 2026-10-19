@@ -7,6 +7,9 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'Días hábiles y calendario | Altum Contadores y Asociados',
   description: 'Suma plazos o calcula la diferencia entre fechas con una herramienta orientativa.',
+  alternates: {
+    canonical: 'https://altumlumen-design.github.io/altum-contadores/apps/dias/',
+  },
 };
 
 export default function Page() {
